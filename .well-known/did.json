@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1"
+  ],
+  "id": "did:web:destro122.github.io",
+  "verificationMethod": [
+    {
+      "id": "did:web:destro122.github.io#key-1",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:monuser.github.io",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "crv": "P-256",
+        "x": "XXXXX",
+        "y": "YYYYY"
+      }
+    }
+  ],
+  "assertionMethod": [
+    "did:web:destro122.github.io#key-1"
+  ]
+}
