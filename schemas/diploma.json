@@ -1,0 +1,151 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://destro122.github.io/mosip-did/schemas/diploma.json",
+    "title": "Diploma Credential Schema",
+    "description": "JSON Schema for Brazilian university diploma Verifiable Credential (W3C VC 1.1 compatible)",
+    "type": "object",
+    "required": [
+        "issuer",
+        "credentialSubject",
+        "issuanceDate"
+    ],
+    "properties": {
+        "issuer": {
+            "type": "object",
+            "required": ["id", "name"],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "mecCode": {
+                    "type": "string"
+                },
+                "cnpj": {
+                    "type": "string"
+                }
+            }
+        },
+        "issuanceDate": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "credentialSubject": {
+            "type": "object",
+            "required": [
+                "id",
+                "givenName",
+                "familyName",
+                "course",
+                "registration"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "givenName": {
+                    "type": "string"
+                },
+                "familyName": {
+                    "type": "string"
+                },
+                "cpf": {
+                    "type": "string"
+                },
+                "dateOfBirth": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "sex": {
+                    "type": "string"
+                },
+                "nationality": {
+                    "type": "string"
+                },
+                "placeOfBirth": {
+                    "type": "string"
+                },
+                "course": {
+                    "type": "object",
+                    "required": [
+                        "courseName",
+                        "degreeGranted",
+                        "completionDate"
+                    ],
+                    "properties": {
+                        "courseName": {
+                            "type": "string"
+                        },
+                        "emecCode": {
+                            "type": "string"
+                        },
+                        "modality": {
+                            "type": "string"
+                        },
+                        "degreeGranted": {
+                            "type": "string"
+                        },
+                        "titleGranted": {
+                            "type": "string"
+                        },
+                        "completionDate": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "qualification": {
+                            "type": "object",
+                            "properties": {
+                                "qualificationName": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "registration": {
+                    "type": "object",
+                    "required": [
+                        "registryBook",
+                        "registryNumber"
+                    ],
+                    "properties": {
+                        "registryBook": {
+                            "type": "string"
+                        },
+                        "registryNumber": {
+                            "type": "string"
+                        },
+                        "degreeConferralDate": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    }
+                }
+            }
+        },
+        "credentialStatus": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "statusPurpose": {
+                    "type": "string"
+                },
+                "statusListIndex": {
+                    "type": "string"
+                },
+                "statusListCredential": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        }
+    }
+}
