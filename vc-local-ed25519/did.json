@@ -1,23 +1,18 @@
 {
-  "assertionMethod": [
-    "did:web:mosip.github.io:inji-config:vc-local-ed25519"
-  ],
-  "service": [],
-  "id": "did:web:mosip.github.io:inji-config:vc-local-ed25519",
-  "verificationMethod": [
-    {
-      "publicKeyMultibase": "z6MkgS95bBJ7Md7TkYS6F8ZpsYN2FvV7A4N7wJqKiYRFkbzo",
-      "controller": "did:web:mosip.github.io:inji-config:vc-local-ed25519",
-      "id": "did:web:mosip.github.io:inji-config:vc-local-ed25519#VVbLtOIZZe0hgbIWW8Vh0xwNhhK7pSgMmKV2iBlV8Ho",
-      "type": "Ed25519VerificationKey2020",
-      "@context": "https://w3id.org/security/suites/ed25519-2020/v1"
-    }
-  ],
   "@context": [
-    "https://www.w3.org/ns/did/v1"
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/ed25519-2020/v1"
   ],
+  "id": "did:web:destro122.github.io:mosip-did:vc-local-ed25519",
   "alsoKnownAs": [],
-  "authentication": [
-    "did:web:mosip.github.io:inji-config:vc-local-ed25519"
-  ]
+  "authentication": ["did:web:destro122.github.io:mosip-did:vc-local-ed25519"],
+  "assertionMethod": ["did:web:destro122.github.io:mosip-did:vc-local-ed25519"],
+  "verificationMethod": [{
+    "@context": "https://w3id.org/security/suites/ed25519-2020/v1",
+    "id": "did:web:destro122.github.io:mosip-did:vc-local-ed25519#VVbLtOIZZe0hgbIWW8Vh0xwNhhK7pSgMmKV2iBlV8Ho",
+    "type": "Ed25519VerificationKey2020",
+    "controller": "did:web:destro122.github.io:mosip-did:vc-local-ed25519",
+    "publicKeyMultibase": "z6MkgS95bBJ7Md7TkYS6F8ZpsYN2FvV7A4N7wJqKiYRFkbzo"
+  }],
+  "service": []
 }
