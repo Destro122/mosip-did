@@ -1,0 +1,158 @@
+@prefix edu: <https://destro122.github.io/mosip-did/vocab/diploma/v1#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#################################################
+# Ontology declaration
+#################################################
+
+<https://destro122.github.io/mosip-did/vocab/diploma/v1>
+    a owl:Ontology ;
+    rdfs:label "Brazilian Diploma VC Vocabulary" ;
+    rdfs:comment "Vocabulary for Brazilian university diploma Verifiable Credentials, aligned with MEC diploma digital format and W3C VC standards." .
+
+#################################################
+# Classes
+#################################################
+
+edu:DiplomaCredential a rdfs:Class ;
+    rdfs:label "Diploma Credential" ;
+    rdfs:comment "A verifiable credential representing a Brazilian academic diploma (Diploma Digital MEC)." .
+
+edu:Course a rdfs:Class ;
+    rdfs:label "Course" ;
+    rdfs:comment "An academic course leading to a degree." .
+
+edu:Qualification a rdfs:Class ;
+    rdfs:label "Qualification" ;
+    rdfs:comment "The academic qualification or title granted upon completion of a course." .
+
+edu:Registration a rdfs:Class ;
+    rdfs:label "Registration" ;
+    rdfs:comment "Official registry record of the diploma (livro/folha/número MEC)." .
+
+#################################################
+# Issuer properties
+#################################################
+
+edu:mecCode a rdf:Property ;
+    rdfs:domain schema:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "MEC Code" ;
+    rdfs:comment "Código MEC da instituição de ensino superior (IES)." .
+
+edu:cnpj a rdf:Property ;
+    rdfs:domain schema:Organization ;
+    rdfs:range xsd:string ;
+    rdfs:label "CNPJ" ;
+    rdfs:comment "Cadastro Nacional da Pessoa Jurídica da IES." .
+
+edu:addressComplement a rdf:Property ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string ;
+    rdfs:label "Address Complement" .
+
+edu:neighborhood a rdf:Property ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string ;
+    rdfs:label "Neighborhood (Bairro)" .
+
+edu:municipalityCode a rdf:Property ;
+    rdfs:domain schema:PostalAddress ;
+    rdfs:range xsd:string ;
+    rdfs:label "IBGE Municipality Code" ;
+    rdfs:comment "Código IBGE do município." .
+
+#################################################
+# Person properties
+#################################################
+
+edu:cpf a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:string ;
+    rdfs:label "CPF" ;
+    rdfs:comment "Cadastro de Pessoas Físicas — Brazilian individual taxpayer registry number." .
+
+#################################################
+# Course properties
+#################################################
+
+edu:course a rdf:Property ;
+    rdfs:domain edu:DiplomaCredential ;
+    rdfs:range edu:Course ;
+    rdfs:label "Course" .
+
+edu:emecCode a rdf:Property ;
+    rdfs:domain edu:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "e-MEC Code" ;
+    rdfs:comment "Código do curso no sistema e-MEC." .
+
+edu:modality a rdf:Property ;
+    rdfs:domain edu:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "Modality" ;
+    rdfs:comment "Modalidade do curso: Presencial, EAD, etc." .
+
+edu:degreeGranted a rdf:Property ;
+    rdfs:domain edu:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "Degree Granted" ;
+    rdfs:comment "Grau conferido: Bacharelado, Licenciatura, Tecnólogo, etc." .
+
+edu:titleGranted a rdf:Property ;
+    rdfs:domain edu:Course ;
+    rdfs:range xsd:string ;
+    rdfs:label "Title Granted" ;
+    rdfs:comment "Título conferido ao diplomado." .
+
+edu:completionDate a rdf:Property ;
+    rdfs:domain edu:Course ;
+    rdfs:range xsd:date ;
+    rdfs:label "Completion Date" ;
+    rdfs:comment "Data de conclusão do curso." .
+
+#################################################
+# Qualification properties
+#################################################
+
+edu:qualification a rdf:Property ;
+    rdfs:domain edu:Course ;
+    rdfs:range edu:Qualification ;
+    rdfs:label "Qualification" .
+
+edu:qualificationName a rdf:Property ;
+    rdfs:domain edu:Qualification ;
+    rdfs:range xsd:string ;
+    rdfs:label "Qualification Name" ;
+    rdfs:comment "Nome da habilitação ou ênfase do curso." .
+
+#################################################
+# Registration properties
+#################################################
+
+edu:registration a rdf:Property ;
+    rdfs:domain edu:DiplomaCredential ;
+    rdfs:range edu:Registration ;
+    rdfs:label "Registration" .
+
+edu:registryBook a rdf:Property ;
+    rdfs:domain edu:Registration ;
+    rdfs:range xsd:string ;
+    rdfs:label "Registry Book (Livro)" ;
+    rdfs:comment "Livro de registro do diploma no MEC." .
+
+edu:registryNumber a rdf:Property ;
+    rdfs:domain edu:Registration ;
+    rdfs:range xsd:string ;
+    rdfs:label "Registry Number (Número)" ;
+    rdfs:comment "Número de registro do diploma no MEC." .
+
+edu:degreeConferralDate a rdf:Property ;
+    rdfs:domain edu:Registration ;
+    rdfs:range xsd:date ;
+    rdfs:label "Degree Conferral Date" ;
+    rdfs:comment "Data de colação de grau." .
