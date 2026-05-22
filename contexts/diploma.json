@@ -1,0 +1,84 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "edu": "https://destro122.github.io/mosip-did/vocab/diploma/v1#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+        "DiplomaCredential": "edu:DiplomaCredential",
+
+        "givenName": "schema:givenName",
+        "familyName": "schema:familyName",
+        "dateOfBirth": {
+            "@id": "schema:birthDate",
+            "@type": "xsd:date"
+        },
+        "sex": "schema:gender",
+        "nationality": "schema:nationality",
+        "placeOfBirth": "schema:birthPlace",
+
+        "cpf": {
+            "@id": "edu:cpf",
+            "@type": "xsd:string"
+        },
+        "mecCode": {
+            "@id": "edu:mecCode",
+            "@type": "xsd:string"
+        },
+        "cnpj": {
+            "@id": "edu:cnpj",
+            "@type": "xsd:string"
+        },
+
+        "address": "schema:address",
+        "street": "schema:streetAddress",
+        "municipality": "schema:addressLocality",
+        "state": "schema:addressRegion",
+        "complement": "edu:addressComplement",
+        "neighborhood": "edu:neighborhood",
+        "municipalityCode": "edu:municipalityCode",
+
+        "Course": "edu:Course",
+        "course": {
+            "@id": "edu:course",
+            "@type": "@id"
+        },
+        "courseName": "schema:name",
+        "emecCode": {
+            "@id": "edu:emecCode",
+            "@type": "xsd:string"
+        },
+        "modality": "edu:modality",
+        "degreeGranted": "edu:degreeGranted",
+        "titleGranted": "edu:titleGranted",
+        "completionDate": {
+            "@id": "edu:completionDate",
+            "@type": "xsd:date"
+        },
+
+        "Qualification": "edu:Qualification",
+        "qualification": {
+            "@id": "edu:qualification",
+            "@type": "@id"
+        },
+        "qualificationName": "edu:qualificationName",
+
+        "registration": {
+            "@id": "edu:registration",
+            "@type": "@id"
+        },
+        "registryBook": "edu:registryBook",
+        "registryNumber": "edu:registryNumber",
+        "degreeConferralDate": {
+            "@id": "edu:degreeConferralDate",
+            "@type": "xsd:date"
+        },
+
+        "StatusList2021Entry": "https://w3id.org/vc/status-list#StatusList2021Entry",
+        "statusPurpose": "https://w3id.org/vc/status-list#statusPurpose",
+        "statusListIndex": "https://w3id.org/vc/status-list#statusListIndex",
+        "statusListCredential": {
+            "@id": "https://w3id.org/vc/status-list#statusListCredential",
+            "@type": "@id"
+        }
+    }
+}
