@@ -17,7 +17,7 @@
       "id": "did:web:destro122.github.io:mosip-did:vc-local-ed25519#euaHvrKrPsWO4A5WrdKlDsd66iOk7W5FhPP4fs5kW6E",
       "type": "Ed25519VerificationKey2020",
       "controller": "did:web:destro122.github.io:mosip-did:vc-local-ed25519",
-      "publicKeyMultibase": "z6Mkf7WJLwVQjj2ohS2UEZLiZwUjvjv1dR7TmE3ecBGCxeGd"
+      "publicKeyMultibase": "z6Mkn7VxooQdrPSbeN1J5tKTyUWYGkaGEEeWmdxM9bGUa3aE"
     }
   ],
   "service": []
